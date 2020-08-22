@@ -1,8 +1,14 @@
+<!-- .slide: data-background="#111111" -->
+
 # Pytania z kanału #powtórka
+
+___
 
 @edmundoPL
 > Pytanie ode mnie na powtórkę. O co chodzi z tym zapewnianiem odpowiednio długiego życia zmiennej, na która wskazuje pointer lub referencja? 
 > Pojawiło się to już kilka razy, a ja nadal jakoś tego nie czuje. Niby trochę rozumiem ale nie do końca. Może jakiś ciekawy przykład się znajdzie do czwartku?
+
+___
 
 Prześledźmy stos w tym kawałku kodu
 
@@ -30,6 +36,9 @@ int main() {
 }
 ```
 
+___
+<!-- .slide: style="font-size: 0.7em" -->
+
 Stos graficznie. Prawo -> kolejne linie kodu
 
 | FRAME | A               | B              | C           | D            | E                    | F            | G               | H            | I               |
@@ -39,15 +48,16 @@ Stos graficznie. Prawo -> kolejne linie kodu
 |   0   | **pointer = ?** | pointer = ?    | pointer = ? | pointer = ?  | **pointer = &a** !!! | pointer = &a | pointer = &a    | pointer = &a | pointer = &a    |
 |   0   | **number = ?**  | **number = 5** | number = 5  | number = 5   | number = 5           | number = 5   | number = 5      | number = 5   | **number = 50** |
 
----
+___
 
 @Jakub J
 > Generyczne lambdy, jaki jest w takim razie sens stosowania zwykłych lambd(w których przekazujemy konkretny typ)?
 
-Ograniczony. Tylko gdy chcemy aby lambda zadziałała dla określonego typu i np nie skompilowała się dla innego.
-Normalnie zalecam stosowanie generycznych. W kodzie można się natknąć na takie i takie. Generyczne weszły w C++14 jeszcze się dobrze nie upowszechniły. Ale mocno do nich zachęcam.
+Ograniczony. Tylko gdy chcemy, aby lambda zadziałała dla określonego typu i np. nie skompilowała się dla innego.
+Normalnie zalecam stosowanie generycznych. W kodzie można się natknąć na takie i takie. Generyczne weszły w C++14 i jeszcze się dobrze nie upowszechniły. Ale mocno do nich zachęcam.
 
----
+___
+<!-- .slide: style="font-size: 0.9em" -->
 
 @lisie_sprawy
 > Przeklejam z innego kanału, żeby nie uciekło :) czemu w niektórych zadaniach związanych z wywaleniem samogłosek pojawia się np. "constexpr int", zamiast "const int"?
