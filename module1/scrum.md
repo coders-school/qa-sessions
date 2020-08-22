@@ -6,9 +6,9 @@ ___
 
 ##  Współpraca grupowa - Scrum
 
-* [Spotkania Scrumowe](https://github.com/coders-school/qa-sessions/raw/master/session2/ScrumFramework.pdf)
+* [Spotkania Scrumowe](https://github.com/coders-school/qa-sessions/raw/master/module1/ScrumFramework.pdf)
 
-* [Ściąga ze Scruma](https://github.com/coders-school/qa-sessions/raw/master/session2/sciaga_scrum.pdf)
+* [Ściąga ze Scruma](https://github.com/coders-school/qa-sessions/raw/master/module1/sciaga_scrum.pdf)
 
 ___
 
