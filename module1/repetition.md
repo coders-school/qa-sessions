@@ -5,10 +5,11 @@
 ___
 
 @edmundoPL
-> Pytanie ode mnie na powtórkę. O co chodzi z tym zapewnianiem odpowiednio długiego życia zmiennej, na która wskazuje pointer lub referencja? 
+> Pytanie ode mnie na powtórkę. O co chodzi z tym zapewnianiem odpowiednio długiego życia zmiennej, na która wskazuje pointer lub referencja?
 > Pojawiło się to już kilka razy, a ja nadal jakoś tego nie czuje. Niby trochę rozumiem ale nie do końca. Może jakiś ciekawy przykład się znajdzie do czwartku?
 
 ___
+<!-- .slide: style="font-size: 0.65em" -->
 
 Prześledźmy stos w tym kawałku kodu
 
@@ -36,10 +37,9 @@ int main() {
 }
 ```
 
-___
-<!-- .slide: style="font-size: 0.7em" -->
-
 Stos graficznie. Prawo -> kolejne linie kodu
+
+<div style="font-size: 0.7em">
 
 | FRAME | A               | B              | C           | D            | E                    | F            | G               | H            | I               |
 | :---: | :-------------- | :------------- | :---------- | :----------- | :------------------- | :----------- | :-------------- | :----------- | :-------------- |
@@ -47,6 +47,8 @@ Stos graficznie. Prawo -> kolejne linie kodu
 |   1   |                 |                | **a = ?**   | **a = 10**   |                      | **??? = 20** | **b = ? (20?)** | **b = 50**   |                 |
 |   0   | **pointer = ?** | pointer = ?    | pointer = ? | pointer = ?  | **pointer = &a** !!! | pointer = &a | pointer = &a    | pointer = &a | pointer = &a    |
 |   0   | **number = ?**  | **number = 5** | number = 5  | number = 5   | number = 5           | number = 5   | number = 5      | number = 5   | **number = 50** |
+
+</div>
 
 ___
 
