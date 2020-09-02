@@ -63,7 +63,7 @@ ___
 @lisie_sprawy
 > Repasting it from other channel, so it will not lost itself :) why in some tasks about deleting vowels you can see "constexpr int" instead "const int"?
 
-`constexpr` in the context of a variable is a stronger const. In addition to the fact that it is a constant and we will not change its value, the compiler can further optimize all calculations made with its use and simply calculate the result during compilation and put it in the appropriate places as program constants. We will learn how to do it in modern C ++, where more fascinating will be topic of `constexpr` functions, not a variables (constants).
+`constexpr` in the context of a variable is a stronger const. In addition to the fact that it is a constant and we will not change its value, the compiler can further optimize all calculations made with its use and simply calculate the result during compilation and put it in the appropriate places as program constants. We will learn how to do it in modern C++, where more fascinating will be topic of `constexpr` functions, not variables (constants).
 
 Anyway, this is an optimization and you should have the habit to write `constexpr` right away. If the compiler protests somewhere, it means you can't use it there and should leave just `const`. From C++20, `constexpr` will become even more common, because many of the limitations of `constexpr` will be lifted.
 
