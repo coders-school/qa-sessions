@@ -155,9 +155,9 @@ https://github.com/coders-school/kurs_cpp_podstawowy/pull/254/files
 ___
 <!-- .slide: style="font-size: 0.85em" -->
 
-Max line length - 120. How to format?
+Max długość linii - 120. Jak formatować?
 
-Typically lines are long when the function takes multiple parameters:
+Zazwyczaj linie są długie gdy funkcja przyjmuje wiele parametrów:
 <!-- .element: class="fragment fade-in" -->
 
 ```cpp
