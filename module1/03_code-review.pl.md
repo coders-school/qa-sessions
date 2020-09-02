@@ -5,7 +5,7 @@
 ___
 <!-- .slide: style="font-size: 0.9em" -->
 
-Example:
+Przykład:
 
 ```cpp
 bool doesPasswordsMatch(const std::string& password, const std::string& repeatedPassword) {
@@ -16,7 +16,7 @@ bool doesPasswordsMatch(const std::string& password, const std::string& repeated
 }
 ```
 
-Better:
+Lepiej:
 <!-- .element: class="fragment fade-in" -->
 
 ```cpp
@@ -29,7 +29,7 @@ bool doesPasswordsMatch(const std::string& password, const std::string& repeated
 ___
 <!-- .slide: style="font-size: 0.9em" -->
 
-Example:
+Przykład:
 
 ```cpp
 std::string getErrorMessage(ErrorCode Error) {
@@ -56,14 +56,17 @@ std::string getErrorMessage(ErrorCode Error) {
             return "UNDEFINED ERROR";
     }
  }
- // What do you think about removing case ErrorCode::Ok: and putting it in default?
- // Braces are not needed even for multiline cases. It's only matter of convention if you should apply them or not. They don't provide additional safety.
- // We usually don't indent case and code inside namespace
+ //
+ //
+ //
+ // Co myślisz o usunięciu przypadku ErrorCode::Ok: i ustawieniu go jako domyślnego?
+ // Nawiasy klamrowe nie są potrzebne nawet w przypadkach wielowierszowych. To tylko kwestia konwencji, czy powinieneś je stosować, czy nie. Nie zapewniają dodatkowego bezpieczeństwa.
+ // Zazwyczaj nie dokonujemy wcięć przy caseach i kodzie w namespaceach
 ```
 
 ___
 
-Better?:
+Lepiej?:
 
 ```cpp
 std::string getErrorMessage(ErrorCode error) {
@@ -86,7 +89,7 @@ std::string getErrorMessage(ErrorCode error) {
 
 ___
 
-Example:
+Przykład:
 
 ```cpp
 if(doesPasswordsMatch(first_pass, second_pass)) {
@@ -96,7 +99,7 @@ if(doesPasswordsMatch(first_pass, second_pass)) {
 }
 ```
 
-Better:
+Lepiej:
 <!-- .element: class="fragment fade-in" -->
 
 ```cpp
@@ -113,22 +116,22 @@ ___
 enum class ErrorCode {
     PasswordNeedsAtLeastNineCharacters,
     PasswordNeedsAtLeastOneUppercaseLetter,
-    PasswordNeedsAtLeastOneSpecialCharacters,  // trailing comma
+    PasswordNeedsAtLeastOneSpecialCharacters,  // końcowy przecinek
 }
 ```
 
-> I do not know really, it's maybe my habit taken from python, to have commas also in the last element of enum/collection, because if I add new element in the future, i didn't have to worry about some errors in regards to missing comma :)
+> Naprawdę nie wiem, może to mój nawyk zaczerpnięty z Pythona, aby mieć przecinki również po ostatnim elemencie wyliczenia/kolekcji, bo jeśli w przyszłości dodam nowy element, nie będę się musiał martwić o błędy w odniesieniu do brakującego przecinka :)
 
 ___
 <!-- .slide: style="font-size: 0.75em" -->
 
-> A: You can specify a size of vector in constructor :)
+> A: Możesz określić rozmiar wektora w konstruktorze :)
 
 ```cpp
 std::vector<std::shared_ptr<int>> resultVector(count);
 ```
 
-> B: Yes, but what about situation, when count is negative value? I do not think such value should be used in the vector constructor, that's why I do such check first.
+> B: Tak, ale co z sytuacją, gdy licznik ma wartość ujemną? Nie sądzę, aby taka wartość była używana w konstruktorze wektora, dlatego najpierw wykonuję takie sprawdzenie.
 <!-- .element: class="fragment fade-in" -->
 
 ```cpp
@@ -140,10 +143,10 @@ resultVector.reserve(count);
 ```
 <!-- .element: class="fragment fade-in" -->
 
-> A: you are right :) , my fault :)
+> A: masz racje :) , mój błąd :)
 <!-- .element: class="fragment fade-in" -->
 
-> B: No problem, thanks for review :)
+> B: Nie ma problemu, dziękuję za recenzję :)
 <!-- .element: class="fragment fade-in" -->
 
 https://github.com/coders-school/kurs_cpp_podstawowy/pull/254/files
@@ -152,22 +155,22 @@ https://github.com/coders-school/kurs_cpp_podstawowy/pull/254/files
 ___
 <!-- .slide: style="font-size: 0.85em" -->
 
-Max długość linii - 120. Jak formatować?
+Max line length - 120. How to format?
 
-Zazwyczaj linie są długie gdy funkcja przyjmuje wiele parametrów:
+Typically lines are long when the function takes multiple parameters:
 <!-- .element: class="fragment fade-in" -->
 
 ```cpp
 int superFunction(std::vector<std::shared_ptr<int>> vectorOfSharedPointers, std::map<std::string, int> miniMap, std::unordered_set<int> hashes, std::function<void(int, int)> compareFunction) {
-    // do sth
+    // rób coś
 }
 
-// usage
+// użycie
 auto result = superFunction(mySuperVector, myMiniMap, myGreatHashTable, [](const auto & lhs, const auto & rhs) { return lhs >= rhs;})
 ```
 <!-- .element: class="fragment fade-in" -->
 
-Better formatting:
+Lepsze formatowanie:
 <!-- .element: class="fragment fade-in" -->
 
 ```cpp
@@ -175,10 +178,10 @@ int superFunction(std::vector<std::shared_ptr<int>> vectorOfSharedPointers,
                   std::map<std::string, int> miniMap,
                   std::unordered_set<int> hashes,
                   std::function<void(int, int)> compareFunction) {
-    // do sth
+    // rób coś
 }
 
-// usage
+// użycie
 auto result = superFunction(mySuperVector,
                             myMiniMap,
                             myGreatHashTable,
@@ -188,7 +191,7 @@ auto result = superFunction(mySuperVector,
 
 ___
 
-Or for longer lambdas / too long first parameter which exceeds line limit:
+Albo dla dłuższych lambd / zbyt długich parametrów, które przekraczają limit linii:
 
 ```cpp
 int superFunction(
@@ -196,12 +199,12 @@ int superFunction(
         std::map<std::string, int> miniMap,
         std::unordered_set<int> hashes,
         std::function<void(int, int)> compareFunction) {
-        // two levels of indentation above to avoid confusion.
-        // The function body below will be indented with one level
-    // do sth
+        // dwa poziomy wcięcia powyżej, aby uniknąć nieporozumień.
+        // Ciało funkcji poniżej będzie wcięte o jeden poziom
+    // rób coś
 }
 
-// usage
+// użycie
 auto result = superFunction(mySuperVector,
                             myMiniMap,
                             myGreatHashTable,
@@ -213,9 +216,9 @@ auto result = superFunction(mySuperVector,
 
 ___
 
-* <!-- .element: class="fragment fade-in" --> <a href="https://github.com/coders-school/kurs_cpp_podstawowy/pull/252/files">Nice usage of std::map instead of ifs' ladder</a>
+* <!-- .element: class="fragment fade-in" --> <a href="https://github.com/coders-school/kurs_cpp_podstawowy/pull/252/files">Dobre użycie <code>std::map</code> zamiast drabiny ifów</a>
 * <!-- .element: class="fragment fade-in" --> Zwracajcie uwagę na znaki końca linii na końcu dokumentu.
-* <!-- .element: class="fragment fade-in" --> <code>enum</code> lub <code>enum class</code> są pod spodem wartościami całkowitymi (jakiś rodzaj inta). Nie warto przekazywać ich przez const& w celu optymalizacji.
+* <!-- .element: class="fragment fade-in" --> <code>enum</code> lub <code>enum class</code> są pod spodem wartościami całkowitymi (jakiś rodzaj inta). Nie warto przekazywać ich przez <code>const&</code> w celu optymalizacji.
 * <!-- .element: class="fragment fade-in" -->  Max 2 puste linie. Zazwyczaj wystarcza jedna. 2 puste linie nie mogą wystąpić wewnątrz żadnych bloków (zakresów), jak funkcje, klasy, enumy.
 * <!-- .element: class="fragment fade-in" -->  Dobra praktyka - alokowanie pojemności wektora, gdy jest z góry znana.
 * <!-- .element: class="fragment fade-in" -->  Kiedy stosujemy konwencje?
