@@ -1,6 +1,6 @@
 <!-- .slide: data-background="#111111" -->
 
-# Przykłady z Code Review
+# Examples from Code Review
 
 ___
 <!-- .slide: style="font-size: 0.9em" -->
@@ -152,9 +152,9 @@ https://github.com/coders-school/kurs_cpp_podstawowy/pull/254/files
 ___
 <!-- .slide: style="font-size: 0.85em" -->
 
-Max długość linii - 120. Jak formatować?
+Max line length - 120. How to format?
 
-Zazwyczaj linie są długie gdy funkcja przyjmuje wiele parametrów:
+Typically lines are long when the function takes multiple parameters:
 <!-- .element: class="fragment fade-in" -->
 
 ```cpp
@@ -213,25 +213,25 @@ auto result = superFunction(mySuperVector,
 
 ___
 
-* <!-- .element: class="fragment fade-in" --> <a href="https://github.com/coders-school/kurs_cpp_podstawowy/pull/252/files">Nice usage of std::map instead of ifs' ladder</a>
-* <!-- .element: class="fragment fade-in" --> Zwracajcie uwagę na znaki końca linii na końcu dokumentu.
-* <!-- .element: class="fragment fade-in" --> <code>enum</code> lub <code>enum class</code> są pod spodem wartościami całkowitymi (jakiś rodzaj inta). Nie warto przekazywać ich przez const& w celu optymalizacji.
-* <!-- .element: class="fragment fade-in" -->  Max 2 puste linie. Zazwyczaj wystarcza jedna. 2 puste linie nie mogą wystąpić wewnątrz żadnych bloków (zakresów), jak funkcje, klasy, enumy.
-* <!-- .element: class="fragment fade-in" -->  Dobra praktyka - alokowanie pojemności wektora, gdy jest z góry znana.
-* <!-- .element: class="fragment fade-in" -->  Kiedy stosujemy konwencje?
-  * <!-- .element: class="fragment fade-in" -->  Współpraca grupowa - obowiązkowo. Nie ma nic gorszego niż niejednolite formatowanie w projekcie. Narzucamy wam styl zmodyfikowany styl Chromium, aby nie było przepychanek. Możecie go egzekwować do woli, w szczególności w Internal Code Review (czyli wewnątrz grupy, zanim zgłosicie nam Pull Request do sprawdzenia)
-  * <!-- .element: class="fragment fade-in" -->  Praca indywidualna - można stosować własne upodobania, ważne żeby było jednolicie.
-  * <!-- .element: class="fragment fade-in" -->  Nie bądźcie "code style nazi" i nie wymuszajcie na innych osobach waszego stylu formatowania, jeśli komentujecie indywidualne PR. Oczywiście fajnie gdyby wszystko było tak samo wszędzie, ale tak naprawdę co firma/projekt to spotkacie się z innym formatowaniem. Warto przywyknąć, że nie zawsze wam pasuje to co sprawdzacie. Głównie odnosi się to do nowych linii i nawiasów {}.
+* <!-- .element: class="fragment fade-in" --> <a href="https://github.com/coders-school/kurs_cpp_podstawowy/pull/252/files">Nice usage of <code>std::map</code> instead of ifs' ladder</a>
+* <!-- .element: class="fragment fade-in" --> Pay attention to the line breaks at the end of the document.
+* <!-- .element: class="fragment fade-in" --> <code>enum</code> or <code>enum class</code> are integer values ​​underneath (some kind of int). It's not worth passing them over <code>const&</code> for optimization.
+* <!-- .element: class="fragment fade-in" -->  Max 2 blank lines. Usually one is enough. 2 empty lines cannot appear inside any blocks (ranges) like functions, classes, enums.
+* <!-- .element: class="fragment fade-in" -->  Good practice - allocate vector capacity when known in advance.
+* <!-- .element: class="fragment fade-in" -->  When do we use the conventions?
+  * <!-- .element: class="fragment fade-in" -->  Group cooperation - obligatory. There is nothing worse than patchy formatting in your project. We are imposing on you the Chromium Modified Style so that there is no scuffle. You can enforce it at will, in particular in the Internal Code Review (i.e. inside the group, before sending us a Pull Request for review)
+  * <!-- .element: class="fragment fade-in" -->  Individual work - you can use your own preferences, it is important that it is uniform.
+  * <!-- .element: class="fragment fade-in" --> Don't be "code style nazi" and don't force your formatting style on other people if you comment on individual PR. Of course, it would be nice if everything has same formatting everywhere, but in fact, every company/project will use a different formatting. It is worth to get used to the fact that what you check does not always suit you. This mainly applies to new lines and {} brackets. 
 
 ___
 
-* <!-- .element: class="fragment fade-in" --> <code>#include</code> - ja (Łukasz) nie jestem zbyt nazistowski z komentowaniem wam że:
-  * <!-- .element: class="fragment fade-in" --> jest nieposortowane
-  * <!-- .element: class="fragment fade-in" --> nie ma nowej linii
-  * <!-- .element: class="fragment fade-in" --> żeby to przenosić do cpp zamiast trzymać w hpp
-  * <!-- .element: class="fragment fade-in" --> usunąć, bo nieużywane.
+* <!-- .element: class="fragment fade-in" --> <code>#include</code> - I (Łukasz) am not too Nazi commenting to you that:
+  * <!-- .element: class="fragment fade-in" --> it is unsorted
+  * <!-- .element: class="fragment fade-in" --> there is no new line
+  * <!-- .element: class="fragment fade-in" --> to move it to cpp instead of sticking to hpp
+  * <!-- .element: class="fragment fade-in" --> remove, because not used.
   
-  Tylko jak mi się rzuci w oczy to daję taki komentarz. Ale wiedzcie, że to są dobre praktyki i warto je stosować.
+  Only when it catches my eye I give such a comment. But know that these are good practices and it is worth applying them.
   <!-- .element: class="fragment fade-in" -->
 
-* <!-- .element: class="fragment fade-in" --> Też nie bądźcie nazistami i nie róbcie całego code review tylko po to, żeby komuś wytknąć nieposortowane headery lub brakujące {} w jednym miejscu. Podczas projektów grupowych takie rzeczy sobie nawytykacie wewnątrz grup i tak się najszybciej nauczycie :) Na zewnątrz do sprawdzenia ma wychodzić kod przejrzany przez pozostałe osoby z grupy. Nie ma zwalania winy, że to pisał X i on nie dopilnował. Cała grupa obrywa równo ;)
+* <!-- .element: class="fragment fade-in" --> Also, don't be Nazis and don't do the whole code review just to point out to someone unsorted headers or missing {} in one place. During group projects you'll give yourself a needles about such things inside the groups and this is how you learn the fastest :) To outside review should goes only the code checked by other group members. There is no blaming X that wrote that and he did not take care of it. The whole group gets a beating evenly ;)
