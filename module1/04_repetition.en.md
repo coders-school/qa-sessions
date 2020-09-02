@@ -1,17 +1,17 @@
 <!-- .slide: data-background="#111111" -->
 
-# Pytania z kanału #powtórka
+# Questions from #powtórka channel
 
 ___
 
 @edmundoPL
-> Pytanie ode mnie na powtórkę. O co chodzi z tym zapewnianiem odpowiednio długiego życia zmiennej, na która wskazuje pointer lub referencja?
-> Pojawiło się to już kilka razy, a ja nadal jakoś tego nie czuje. Niby trochę rozumiem ale nie do końca. Może jakiś ciekawy przykład się znajdzie do czwartku?
+> Question from me to for the recap. What is the point of ensuring a long enough life for the variable which the pointer or reference points to?
+> It happened a couple of times now, and I still don't feel it. I kind of understand but not quite. Maybe an interesting example will be found by Thursday?
 
 ___
 <!-- .slide: style="font-size: 0.65em" -->
 
-Prześledźmy stos w tym kawałku kodu
+Let's trace the stack in this piece of code
 
 ```cpp
 #include <iostream>
@@ -37,7 +37,7 @@ int main() {
 }
 ```
 
-Stos graficznie. Prawo -> kolejne linie kodu
+Stack graphically. Right -> next lines of code
 
 <div style="font-size: 0.7em">
 
@@ -53,19 +53,18 @@ Stos graficznie. Prawo -> kolejne linie kodu
 ___
 
 @Jakub J
-> Generyczne lambdy, jaki jest w takim razie sens stosowania zwykłych lambd(w których przekazujemy konkretny typ)?
+> Generic lambdas, what's the point of using regular lambdas (in which we pass a specific type)?
 
-Ograniczony. Tylko gdy chcemy, aby lambda zadziałała dla określonego typu i np. nie skompilowała się dla innego.
-Normalnie zalecam stosowanie generycznych. W kodzie można się natknąć na takie i takie. Generyczne weszły w C++14 i jeszcze się dobrze nie upowszechniły. Ale mocno do nich zachęcam.
-
+Limited. Only when we want lambda to work for a certain type and e.g. not compile for another.
+I normally recommend using generics. You can come across such and such in the code. Generics are in C++14, and are yet to become well-established. But I strongly encourage you to use them.
 ___
 <!-- .slide: style="font-size: 0.9em" -->
 
 @lisie_sprawy
-> Przeklejam z innego kanału, żeby nie uciekło :) czemu w niektórych zadaniach związanych z wywaleniem samogłosek pojawia się np. "constexpr int", zamiast "const int"?
+> Repasting it from other channel, so it will not lost itself :) why in some tasks about deleting vowels you can see "constexpr int" instead "const int"?
 
-`constexpr` w kontekście zmiennej to taki silniejszy const. Oprócz tego, że jest to stała i nie zmienimy jej wartości to kompilator może dodatkowo optymalizować wszelkie obliczenia wykonywane z jej użyciem i po prostu już podczas kompilacji obliczyć wynik i wstawić go w odpowiednie miejsca jako stałe programu. Jak to robić to się nauczymy na nowoczesnym C++, gdzie bardziej fascynujący będzie temat funkcji `constexpr`, a nie zmiennych (stałych).
+`constexpr` in the context of a variable is a stronger const. In addition to the fact that it is a constant and we will not change its value, the compiler can further optimize all calculations made with its use and simply calculate the result during compilation and put it in the appropriate places as program constants. We will learn how to do it in modern C ++, where more fascinating will be topic of `constexpr` functions, not a variables (constants).
 
-W każdym bądź razie jest to optymalizacja i warto mieć odruch pisania constexpr od razu. Jeśli gdzieś kompilator zaprotestuje, to znaczy że się nie da i zostawiamy sam const. Od C++20 `constexpr` wejdzie w użycie jeszcze powszechniej, bo dużo ograniczeń funkcji `constexpr` zostanie zniesionych.
+Anyway, this is an optimization and you should have the habit to write `constexpr` right away. If the compiler protests somewhere, it means you can't use it there and should leave just `const`. From C++20, `constexpr` will become even more common, because many of the limitations of `constexpr` will be lifted.
 
-Do zapamiętania na teraz: staraj się domyślnie używać `constexpr` przy definiowaniu stałych zamiast const.
+To remember for now: try to use `constexpr` by default when defining constants instead of `const`.
