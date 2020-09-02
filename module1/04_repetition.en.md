@@ -1,7 +1,7 @@
 <!-- .slide: data-background="#111111" -->
 
 # Questions from #powtórka channel
-
+<!-- Pytanie czy tłumaczyć nazwę kanału, czy uznać ją za nazwę własną? -->
 ___
 
 @edmundoPL
